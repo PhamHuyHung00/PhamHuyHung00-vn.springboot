@@ -25,7 +25,6 @@ public class StudentController {
     public ResponseEntity<?> getStudent(@PathVariable("id") int id) {
         Student std = studentService.getStudentById(id);
         return ResponseEntity.ok(std);
-
     }
 
 
@@ -49,7 +48,6 @@ public class StudentController {
     public ResponseEntity<?> updateStudent(@PathVariable("id") int id, @RequestBody Student std) {
         studentService.updateStudent(std, id);
         return ResponseEntity.ok(std);
-
     }
 
     @DeleteMapping("/student/{id}")

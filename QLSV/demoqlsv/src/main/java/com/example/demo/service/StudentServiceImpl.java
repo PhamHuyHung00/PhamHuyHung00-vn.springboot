@@ -38,8 +38,6 @@ public class StudentServiceImpl implements StudentService {
             throw new NotFoundException("Can not create student");
         }
         return studentRepository.save(student);
-
-
     }
 
     @Override
@@ -58,7 +56,6 @@ public class StudentServiceImpl implements StudentService {
         } catch (Exception ex) {
             throw new IllegalArgumentException("Database error. Can't update user");
         }
-
     }
 
     @Override
@@ -66,7 +63,6 @@ public class StudentServiceImpl implements StudentService {
         Optional<Student> std = studentRepository.findById(id);
         if (std.isPresent()) {
             studentRepository.deleteById(id);
-
         } else
             throw new NotFoundException("No student found ID: " + id);
 
